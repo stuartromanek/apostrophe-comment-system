@@ -1,0 +1,14 @@
+{% for piece in data.widget._pieces %}
+<div class="comment-widget" style="padding: 50px;" data-piece-id="{{ piece._id }}">
+	<h1>COMMENTS: {{ piece.title }}</h1>
+	<ul>
+	{% for comment in piece.comments %}
+		<li><strong>{{ comment.user }}:</strong> {{ comment.comment }}</li>
+	{% endfor %}
+	</ul>
+	<div class="comment-form">
+		<input type="text" name="comment" style="padding: 10px;" data-comment-input>
+		<button data-comment-submit style="padding: 10px;">Submit</button>
+	</div>
+</div>
+{% endfor %}
